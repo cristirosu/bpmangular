@@ -10,13 +10,15 @@ import {Observable} from "rxjs/Rx";
 export class StudentsComponent implements OnInit{
 
   constructor(private studentsService: StudentsService, private router: Router, private route: ActivatedRoute){
-
+    console.log("heree");
   }
+
+  private y;
 
   ngOnInit() {
     this.route.data
       .subscribe((data: { strings: Observable<any> }) => {
-        console.log(data);
+        this.y = data;
       });
   }
 
